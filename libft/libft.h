@@ -6,7 +6,7 @@
 /*   By: mdaan <mdaan@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:02:54 by mdaan         #+#    #+#                 */
-/*   Updated: 2021/10/28 18:26:45 by mdaan         ########   odam.nl         */
+/*   Updated: 2021/11/01 15:52:03 by mdaan         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ char			*ft_strstr(const char *haystack, const char *needle);
 char			*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_strcmp(const char *s1, const char *s2);
 int				ft_atoi(const char *str);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -87,6 +88,9 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putbasenbr(unsigned int num, int base);
 void			ft_put2darray(char **array, int height);
+void			exit_msg(char *msg, int error_code);
+int				error_msg(char *msg, int error_code);
+int				double_error_msg(char *msg, char *name, int error_code);
 char			*ft_move_ptr(const char *s, int c);
 int				ft_count_rows(char **array);
 int				get_str_index(char **array, char *str);

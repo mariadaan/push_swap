@@ -4,7 +4,7 @@ int	ft_onlydigits(char *str)
 {
 	while (str && *str)
 	{
-		if (!(ft_isdigit(*str)) && *str != ' ')
+		if (!(ft_isdigit(*str)))
 			return (0);
 		str++;
 	}

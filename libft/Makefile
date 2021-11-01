@@ -6,13 +6,14 @@
 #    By: mdaan <mdaan@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/31 11:56:32 by mdaan         #+#    #+#                  #
-#    Updated: 2021/10/13 17:47:03 by mdaan         ########   odam.nl          #
+#    Updated: 2021/11/01 16:46:45 by mdaan         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
 SRCS	=	$(wildcard ./ascii/*.c)				\
 			$(wildcard ./mem/*.c)				\
+			$(wildcard ./debug/*.c)				\
 			$(wildcard ./put/*.c)				\
 			$(wildcard ./str/*.c)				\
 			$(wildcard ./lst/*.c)				\

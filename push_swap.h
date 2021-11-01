@@ -22,5 +22,21 @@ typedef struct s_stack
 	int	*items;
 }				t_stack;
 
+// init
+void	init_stack(t_stack *stack, int size);
+void	fill_stack(t_stack *stack, char **numbers);
+
+// operations
+void	swap(t_stack *stack, int index_one, int index_two);
+void	swap_top(t_stack *stack);
+int		remove_num(t_stack *stack);
+void	add_num(t_stack *stack, int number);
+void	push(t_stack *one, t_stack *two);
+void	rotate(t_stack *stack);
+void	rev_rotate(t_stack *stack);
+
+// utils
+void	print_stack(char *name, t_stack stack);
+
 
 #endif

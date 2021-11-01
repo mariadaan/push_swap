@@ -25,6 +25,7 @@ typedef struct s_stack
 // init
 void	init_stack(t_stack *stack, int size);
 void	fill_stack(t_stack *stack, char **numbers);
+int		check_input(int argc, char **input);
 
 // operations
 void	swap(t_stack *stack, int index_one, int index_two);
@@ -37,6 +38,7 @@ void	rev_rotate(t_stack *stack);
 
 // utils
 void	print_stack(char *name, t_stack stack);
+void	print_stacked(char *name, t_stack stack);
 
 
 #endif

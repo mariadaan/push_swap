@@ -1,8 +1,11 @@
 NAME		=	push_swap
 
-SRCS		=	push.c
+SRCS		=	main.c			\
+				operations.c	\
+				utils.c			\
+				init.c
 
-HEADER		=	
+HEADER		=	push_swap.h
 
 OBJS		=	$(SRCS:.c=.o)
 

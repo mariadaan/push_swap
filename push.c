@@ -1,13 +1,4 @@
-#include "libft/libft.h"
-#include <stdio.h>
-
-typedef struct s_stack
-{
-	int	max_size;
-	int	top;
-	int	*items;
-}				t_stack;
-
+#include "push_swap.h"
 
 /*
 	Initialize stack and allocate memory for the items.

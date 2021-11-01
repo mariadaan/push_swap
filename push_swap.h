@@ -26,6 +26,7 @@ typedef struct s_stack
 void	init_stack(t_stack *stack, int size);
 void	fill_stack(t_stack *stack, char **numbers);
 int		check_input(int argc, char **input);
+int		has_duplicates(int *items, int size);
 
 // operations
 void	swap(t_stack *stack, int index_one, int index_two);

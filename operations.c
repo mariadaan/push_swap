@@ -30,7 +30,7 @@ void	swap_top(t_stack *stack)
 	Removes a number from the top of the stack.
 	Return this number.
 */
-int	remove_num(t_stack *stack)
+int	pop_num(t_stack *stack)
 {
 	int	top_number;
 
@@ -63,8 +63,9 @@ void	push(t_stack *one, t_stack *two)
 
 	if (two->top == 0 || one->top >= one->max_size)
 		return;
-	number = remove_num(two);
+	number = pop_num(two);
 	add_num(one, number);
+	printf("pb\n");
 }
 
 /*

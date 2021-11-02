@@ -33,3 +33,19 @@ void	print_stacked(char *name, t_stack stack)
 	}
 	printf("----------\n");
 }
+
+void	print_array(char *name, int *numbers, int len)
+{
+	int i;
+
+	i = 0;
+	printf("%s: [", name);
+	while (i < len)
+	{
+		printf("%d", numbers[i]);
+		i++;
+		if (i != len)
+			printf(", ");
+	}
+	printf("]\n");
+}

@@ -12,12 +12,11 @@ int	main(int argc, char *argv[])
 	fill_stack(&stack_a, argv + 1);
 	if (has_duplicates(stack_a.items, stack_a.max_size))
 		return (error_msg("Error", 1));
-	print_stacked("stack a", stack_a);
-	// print_stack("stack b", stack_b);
-	swap_top(&stack_a);
-	push(&stack_b, &stack_a);
-	rotate(&stack_a);
-	rev_rotate(&stack_a);
+	print_array("stack a", stack_a.items, stack_a.top);
+	print_array("stack b", stack_b.items, stack_b.top);
+	sort_stack(&stack_a, &stack_b);
+	print_array("stack a", stack_a.items, stack_a.top);
+	print_array("stack b", stack_b.items, stack_b.top);
 	free(stack_a.items);
 	free(stack_b.items);
 }

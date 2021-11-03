@@ -42,6 +42,8 @@ int		is_int(char *num_str)
 	int		num_int;
 	char	*new_num_str;
 
+	if (!(num_str[0]))
+			return (1);
 	num_int = ft_atoi(num_str);
 	new_num_str = ft_itoa(num_int);
 	if (ft_strcmp(num_str, new_num_str))
@@ -92,11 +94,7 @@ int		check_input(int argc, char **input)
 	while (i < argc - 1)
 	{
 		num = input[i];
-		if (num[0] == '-') // accept '-' at start of string but not in the middle
-			num++;
-		if (!(ft_onlydigits(num)))
-			return (1);
-		if (!(is_int(num)))
+		if (!(ft_isint(num)))
 			return (1);
 		i++;
 	}

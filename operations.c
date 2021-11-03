@@ -65,7 +65,7 @@ void	push(t_stack *one, t_stack *two)
 		return;
 	number = pop_num(two);
 	add_num(one, number);
-	printf("pb\n");
+	// printf("pb\n");
 }
 
 /*

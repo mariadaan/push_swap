@@ -6,7 +6,7 @@
 /*   By: mdaan <mdaan@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:02:54 by mdaan         #+#    #+#                 */
-/*   Updated: 2021/11/01 15:52:03 by mdaan         ########   odam.nl         */
+/*   Updated: 2021/11/03 19:23:54 by mdaan         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_has_digit(char *str);
 int				ft_onlydigits(char *str);
+int				ft_isint(char *num_str);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
@@ -120,5 +121,16 @@ int				read_till_end(int fd, char **line);
 */
 char			*ft_concat(char *str1, char *str2);
 char			*ft_concat_three(char *str1, char *str2, char *str3);
+
+/*
+**	Debug functions
+*/
+
+int				printnum(char *name, int num);
+int				printfloat(char *name, float num);
+int				printstr(char *name, char *str);
+int				printchar(char *name, char c);
+int				printco(char *name, int x, int y);
+int				printflco(char *name, double x, double y);
 
 #endif

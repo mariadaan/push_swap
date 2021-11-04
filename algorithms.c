@@ -9,25 +9,29 @@
 
 void	sort_stack(t_stack *a, t_stack *b)
 {
-	int	tmp;
+	// int	tmp;
 	int	count = 0;
 
 	while (a->top > 0)
 	{
-		tmp = pop_num(a);
+		// tmp = pop_num(a);
+		rev_rotate(a);
 		count++;
 		// printf("\ntmp:     [%d]\n", tmp);
 		// printf("pop a\n");
 		// print_array("stack a", a->items, a->top);
 		// print_array("stack b", b->items, b->top);
-		while (b->top > 0 && b->items[b->top - 1] > tmp)
+		while (b->top > 0 && b->items[b->top - 1] > a->items[0])
 		{
 			push(a, b);
 			count++;
 			// print_array("stack a", a->items, a->top);
 			// print_array("stack b", b->items, b->top);
 		}
-		add_num(b, tmp);
+		rotate(a);
+		push(b, a);
+		// add_num(b, tmp);
+		count++;
 		count++;
 
 		// printf("add b\n");
@@ -36,6 +40,35 @@ void	sort_stack(t_stack *a, t_stack *b)
 	}
 	printnum("count", count);
 }
+
+void	sort_three(t_stack *a)
+{
+	int	count = 0;
+	// als bovenste het grootste getal is rotaten
+	if (a->items[2] > a->items[1] && a->items[2] > a->items[0])
+	{
+		rotate(a);
+		count++;
+	}
+	// als middelste het grootste getal is reverse rotaten
+	if (a->items[1] > a->items[0] && a->items[1] > a->items[2])
+	{
+		rev_rotate(a);
+		count++;
+	}
+	// bovenste getallen swappen als nodig
+	if (a->items[2] > a->items[1])
+	{
+		swap_top(a);
+		count++;
+	}
+	printnum("count", count);
+}
+
+// void	swap_five(t_stack *a, t_stack *b)
+// {
+
+// }
 
 // void	tryout(t_stack *a, t_stack *b)
 // {

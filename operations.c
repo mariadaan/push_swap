@@ -76,11 +76,11 @@ void	rotate(t_stack *stack)
 {
 	int	i;
 
-	i = 0;
-	while (i < stack->max_size - 1)
+	i = stack->max_size - 1;
+	while (i > 0)
 	{
-		swap(stack, i, i + 1);
-		i++;
+		swap(stack, i, i - 1);
+		i--;
 	}
 }
 
@@ -92,10 +92,10 @@ void	rev_rotate(t_stack *stack)
 {
 	int	i;
 
-	i = stack->max_size - 1;
-	while (i > 0)
+	i = 0;
+	while (i < stack->max_size - 1)
 	{
-		swap(stack, i, i - 1);
-		i--;
+		swap(stack, i, i + 1);
+		i++;
 	}
 }

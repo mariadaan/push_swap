@@ -16,3 +16,8 @@ rr  : ra and rb at the same time.
 rra : reverse rotate a- shift down all elements of stackaby 1. The last element becomes the first one.
 rrb : reverse rotate b- shift down all elements of stackbby 1. The last element becomes the first one.
 rrr : rra and rrb at the same time
+
+5500 voor 500
+700 voor 100
+12 voor 5
+2 voor 3

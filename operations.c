@@ -23,7 +23,7 @@ void	swap_top(t_stack *stack)
 {
 	if (stack->top < 2)
 		return;
-	swap(stack, stack->top - 1, stack->items[stack->top - 2]);
+	swap(stack, stack->top - 1, stack->top - 2);
 }
 
 /*

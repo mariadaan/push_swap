@@ -13,11 +13,15 @@ int	main(int argc, char *argv[])
 	if (has_duplicates(stack_a.items, stack_a.max_size))
 		return (error_msg("Error", 1));
 	print_array("stack a", stack_a.items, stack_a.top);
-	print_array("stack b", stack_b.items, stack_b.top);
-	sort_three(&stack_a);
-	// sort_stack(&stack_a, &stack_b);
+	// print_array("stack b", stack_b.items, stack_b.top);
+	if (argc == 4)
+		sort_three(&stack_a);
+	else if (argc == 6)
+		sort_five(&stack_a, &stack_b);
+	else
+		sort_stack(&stack_a, &stack_b);
 	print_array("stack a", stack_a.items, stack_a.top);
-	print_array("stack b", stack_b.items, stack_b.top);
+	// print_array("stack b", stack_b.items, stack_b.top);
 	free(stack_a.items);
 	free(stack_b.items);
 }

@@ -45,6 +45,7 @@ void	print_array(char *name, int *numbers, int len);
 
 // algorithms
 void	sort_stack(t_stack *a, t_stack *b);
+void	sort_three(t_stack *a);
 
 
 

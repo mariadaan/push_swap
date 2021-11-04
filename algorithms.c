@@ -11,16 +11,14 @@ void	sort_stack(t_stack *a, t_stack *b)
 {
 	while (a->top > 0)
 	{
-		rotate(a);
+		rotate("ra", a);
 		while (b->top > 0 && b->items[b->top - 1] > a->items[0])
-			push(a, b);
-		rev_rotate(a);
-		push(b, a);
+			push("pa", a, b);
+		rev_rotate("ra", a);
+		push("pb", b, a);
 	}
 	while (a->top != a->max_size)
-	{
-		push(a, b);
-	}
+		push("pa", a, b);
 }
 
 /*
@@ -33,13 +31,13 @@ void	sort_three(t_stack *a)
 {
 	// als bovenste het grootste getal is rotaten
 	if (a->items[2] > a->items[1] && a->items[2] > a->items[0])
-		rotate(a);
+		rotate("ra", a);
 	// als middelste het grootste getal is reverse rotaten
 	else if (a->items[1] > a->items[0] && a->items[1] > a->items[2])
-		rev_rotate(a);
+		rev_rotate("rra", a);
 	// bovenste getallen swappen als nodig
 	if (a->items[2] > a->items[1])
-		swap_top(a);
+		swap_top("sa", a);
 }
 
 
@@ -72,17 +70,17 @@ void	sort_five(t_stack *a, t_stack *b)
 		// push lowest 2 numbers to stack b
 		if (amount_higher >= 3) // if 3 numbers or more are higher, push to b stack
 		{
-			push(b, a);
+			push("pb", b, a);
 			pushed++;
 		}
 		else
-			rotate(a);
+			rotate("ra", a);
 	}
 	if (b->items[0] > b->items[1])
-		swap_top(b);
+		swap_top("sb", b);
 	sort_three(a);
-	push(a, b);
-	push(a, b);
+	push("pa", a, b);
+	push("pa", a, b);
 }
 
 /*

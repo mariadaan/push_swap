@@ -1,32 +1,6 @@
 #include "push_swap.h"
 
 /*
-	Swap 2 elements in stack.
-	Do nothing if indexes of the elements are above top of stack.
-*/
-void	swap(t_stack *stack, int index_one, int index_two)
-{
-	int	temp;
-
-	if (index_one >= stack->top || index_two >= stack->top)
-		return;
-	temp = stack->items[index_one];
-	stack->items[index_one] = stack->items[index_two];
-	stack->items[index_two] = temp;
-}
-
-/*
-	Swap the first 2 elements at the top of stack.
-	Do nothing if there is only one or no elements.
-*/
-void	swap_top(t_stack *stack)
-{
-	if (stack->top < 2)
-		return;
-	swap(stack, stack->top - 1, stack->top - 2);
-}
-
-/*
 	Removes a number from the top of the stack.
 	Return this number.
 */
@@ -53,11 +27,38 @@ void	add_num(t_stack *stack, int number)
 }
 
 /*
+	Swap 2 elements in stack.
+	Do nothing if indexes of the elements are above top of stack.
+*/
+void	swap(t_stack *stack, int index_one, int index_two)
+{
+	int	temp;
+
+	if (index_one >= stack->top || index_two >= stack->top)
+		return;
+	temp = stack->items[index_one];
+	stack->items[index_one] = stack->items[index_two];
+	stack->items[index_two] = temp;
+}
+
+/*
+	Swap the first 2 elements at the top of stack.
+	Do nothing if there is only one or no elements.
+*/
+void	swap_top(char *name, t_stack *stack)
+{
+	if (stack->top < 2)
+		return;
+	swap(stack, stack->top - 1, stack->top - 2);
+	ft_putendl_fd(name, 1);
+}
+
+/*
 	Take the first element at the top of stack two and
 	put it at the top of stack one.
 	Do nothing if two is empty
 */
-void	push(t_stack *one, t_stack *two)
+void	push(char *name, t_stack *one, t_stack *two)
 {
 	int	number;
 
@@ -65,14 +66,14 @@ void	push(t_stack *one, t_stack *two)
 		return;
 	number = pop_num(two);
 	add_num(one, number);
-	// printf("pb\n");
+	ft_putendl_fd(name, 1);
 }
 
 /*
 	Shift up all elements of stack by 1.
 	The first element becomes the last one.
 */
-void	rotate(t_stack *stack)
+void	rotate(char *name, t_stack *stack)
 {
 	int	i;
 
@@ -82,13 +83,14 @@ void	rotate(t_stack *stack)
 		swap(stack, i, i - 1);
 		i--;
 	}
+	ft_putendl_fd(name, 1);
 }
 
 /*
 	Shift down all elements of stack a by 1.
 	The last element becomes the first one.
 */
-void	rev_rotate(t_stack *stack)
+void	rev_rotate(char *name, t_stack *stack)
 {
 	int	i;
 
@@ -98,4 +100,5 @@ void	rev_rotate(t_stack *stack)
 		swap(stack, i, i + 1);
 		i++;
 	}
+	ft_putendl_fd(name, 1);
 }

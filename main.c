@@ -12,7 +12,7 @@ int	main(int argc, char *argv[])
 	fill_stack(&stack_a, argv + 1);
 	if (has_duplicates(stack_a.items, stack_a.max_size))
 		return (error_msg("Error", 1));
-	print_array("stack a", stack_a.items, stack_a.top);
+	// print_array("stack a", stack_a.items, stack_a.top);
 	// print_array("stack b", stack_b.items, stack_b.top);
 	if (argc == 4)
 		sort_three(&stack_a);
@@ -20,7 +20,7 @@ int	main(int argc, char *argv[])
 		sort_five(&stack_a, &stack_b);
 	else
 		sort_stack(&stack_a, &stack_b);
-	print_array("stack a", stack_a.items, stack_a.top);
+	// print_array("stack a", stack_a.items, stack_a.top);
 	// print_array("stack b", stack_b.items, stack_b.top);
 	free(stack_a.items);
 	free(stack_b.items);

@@ -6,7 +6,7 @@
 /*   By: mdaan <mdaan@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 12:58:03 by mdaan         #+#    #+#                 */
-/*   Updated: 2021/11/05 16:59:49 by mdaan         ########   odam.nl         */
+/*   Updated: 2021/11/05 17:15:41 by mdaan         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
 	num = n;
 	len = ft_get_len(n);
 	str = (char *)ft_calloc((len + 1), sizeof(char));
@@ -50,7 +52,7 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		num *= -1;
 	}
-	while (len > 0)
+	while (num != 0)
 	{
 		str[len - 1] = (num % 10) + '0';
 		num /= 10;

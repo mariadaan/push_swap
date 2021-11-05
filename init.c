@@ -94,7 +94,7 @@ int		check_input(int argc, char **input)
 	while (i < argc - 1)
 	{
 		num = input[i];
-		if (!(ft_isint(num)))
+		if (!(is_int(num)))
 			return (1);
 		i++;
 	}

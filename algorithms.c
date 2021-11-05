@@ -14,7 +14,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 		rotate("ra", a);
 		while (b->top > 0 && b->items[b->top - 1] > a->items[0])
 			push("pa", a, b);
-		rev_rotate("ra", a);
+		rev_rotate("rra", a);
 		push("pb", b, a);
 	}
 	while (a->top != a->max_size)

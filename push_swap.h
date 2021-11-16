@@ -48,6 +48,9 @@ void	sort_stack(t_stack *a, t_stack *b);
 void	sort_three(t_stack *a);
 void	sort_five(t_stack *a, t_stack *b);
 
+int	is_sorted(int *items, int size);
+void	radix_sort(t_stack *a);
+
 
 
 #endif

@@ -1,12 +1,5 @@
 #include "push_swap.h"
 
-/*
-	take top off
-	put top on stack b
-
-	take 
-*/
-
 void	sort_stack(t_stack *a, t_stack *b)
 {
 	while (a->top > 0)
@@ -19,6 +12,80 @@ void	sort_stack(t_stack *a, t_stack *b)
 	}
 	while (a->top != a->max_size)
 		push("pa", a, b);
+}
+
+
+/*
+	Basic bubble sort algorithm
+	Sorts stack with lowest number on top of the stack
+*/
+void	bubble_sort(t_stack *stack)
+{
+	int	i;
+
+	print_array("stack", stack->items, stack->max_size);
+
+	while (!(is_sorted(stack->items, stack->max_size)))
+	{
+		i = 0;
+		while (i < stack->max_size)
+		{
+			if (stack->items[i] < stack->items[i + 1])
+				swap(stack, i, i + 1);
+			i++;
+		}
+	}
+	print_array("copy ", stack->items, stack->max_size);
+
+}
+
+/*
+	Copy stack a into copy stack
+*/
+void	copy_stack(t_stack *a, t_stack *copy)
+{
+	int	i;
+
+	i = 0;
+	while (i < a->max_size)
+	{
+		copy->items[i] = a->items[i];
+		copy->top++;
+		i++;
+	}
+}
+
+/*
+	Sort copy stack and put the index of where a number needs to come
+	in the original stack a
+*/
+void	radix_sort(t_stack *a)
+{
+	t_stack	copy;
+	int		i;
+	int		j;
+
+	i = 0;
+	init_stack(&copy, a->max_size);
+	copy_stack(a, &copy);
+	bubble_sort(&copy);
+	print_array("a    ", a->items, a->max_size);
+	while (i < a->max_size)
+	{
+		j = 0;
+		while (j < a->max_size)
+		{
+			if (a->items[i] == copy.items[j])
+			{
+				a->items[i] = j;
+				break;
+			}
+			j++;
+		}
+		i++;
+	}
+	print_array("a    ", a->items, a->max_size);
+
 }
 
 /*
@@ -84,7 +151,7 @@ void	sort_five(t_stack *a, t_stack *b)
 }
 
 /*
-	checks whether array is sorted in ascending order
+	checks whether array is sorted in descending order
 	returns 1 if sorted
 	returns 0 if not sorted
 */
@@ -95,7 +162,7 @@ int	is_sorted(int *items, int size)
 	i = 0;
 	while (i < size - 1)
 	{
-		if (items[i] > items[i + 1])
+		if (items[i] < items[i + 1])
 			return (0);
 		i++;
 	}

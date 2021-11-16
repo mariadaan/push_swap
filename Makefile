@@ -34,7 +34,8 @@ fclean: clean
 re: fclean all
 
 push: all
-	./push_swap 8 5 6 4 3 2 17 7
+	# ./push_swap 8 5 6 4 3 2 17 7
+	./push_swap 8 5 6 4 3 2 17 7 | wc -l
 
 big: all
 	# 100 numbers

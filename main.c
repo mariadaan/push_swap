@@ -19,9 +19,11 @@ int	main(int argc, char *argv[])
 	else if (argc == 6)
 		sort_five(&stack_a, &stack_b);
 	else
-		radix_sort(&stack_a);
+		radix_sort(&stack_a, &stack_b);
 		// sort_stack(&stack_a, &stack_b);
-	print_array("stack a", stack_a.items, stack_a.top);
+	print_array("stack", stack_a.items, stack_a.top);
+	print_stacked("a", stack_a);
+	print_stacked_binary("a", stack_a);
 	// print_array("stack b", stack_b.items, stack_b.top);
 	free(stack_a.items);
 	free(stack_b.items);

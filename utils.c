@@ -34,6 +34,24 @@ void	print_stacked(char *name, t_stack stack)
 	printf("----------\n");
 }
 
+/*
+	Print each number in stack zodat het echt een stapel lijkt.
+*/
+void	print_stacked_binary(char *name, t_stack stack)
+{
+	int	i;
+
+	printf("----------\n%s:\n", name);
+	i = stack.top - 1;
+	while (i >= 0)
+	{
+		ft_putbasenbr(stack.items[i], 2);
+		ft_putchar('\n');
+		i--;
+	}
+	printf("----------\n");
+}
+
 void	print_array(char *name, int *numbers, int len)
 {
 	int i;

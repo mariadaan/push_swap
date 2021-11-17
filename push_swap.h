@@ -38,6 +38,12 @@ void	rotate(char *name, t_stack *stack);
 void	rev_rotate(char *name, t_stack *stack);
 
 // utils
+int		count_higher(int num, int *items, int len);
+int		is_sorted(int *items, int size);
+int		count_higher(int num, int *items, int len);
+void	copy_stack(t_stack *a, t_stack *copy);
+void	simplify_stack(t_stack *a);
+
 void	print_stack(char *name, t_stack stack);
 void	print_stacked(char *name, t_stack stack);
 void	print_stacked_binary(char *name, t_stack stack);
@@ -45,13 +51,12 @@ void	print_array(char *name, int *numbers, int len);
 
 
 // algorithms
-void	sort_stack(t_stack *a, t_stack *b);
+void	bubble_sort(t_stack *stack);
 void	sort_three(t_stack *a);
 void	sort_five(t_stack *a, t_stack *b);
-
-int	is_sorted(int *items, int size);
 void	radix_sort(t_stack *a, t_stack *b);
 
+void	sort_stack(t_stack *a, t_stack *b);
 
 
 #endif

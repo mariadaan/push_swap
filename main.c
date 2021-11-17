@@ -12,8 +12,6 @@ int	main(int argc, char *argv[])
 	fill_stack(&stack_a, argv + 1);
 	if (has_duplicates(stack_a.items, stack_a.max_size))
 		return (error_msg("Error: duplicate numbers", 1));
-	// print_array("stack a", stack_a.items, stack_a.top);
-	// print_array("stack b", stack_b.items, stack_b.top);
 	if (argc == 4)
 		sort_three(&stack_a);
 	else if (argc == 6)
@@ -21,10 +19,9 @@ int	main(int argc, char *argv[])
 	else
 		radix_sort(&stack_a, &stack_b);
 		// sort_stack(&stack_a, &stack_b);
-	print_array("stack", stack_a.items, stack_a.top);
-	print_stacked("a", stack_a);
-	print_stacked_binary("a", stack_a);
-	// print_array("stack b", stack_b.items, stack_b.top);
+	// print_array("stack", stack_a.items, stack_a.top);
+	// print_stacked("a", stack_a);
+	// print_stacked_binary("a", stack_a);
 	free(stack_a.items);
 	free(stack_b.items);
 }

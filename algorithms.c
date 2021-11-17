@@ -55,11 +55,7 @@ void	copy_stack(t_stack *a, t_stack *copy)
 	}
 }
 
-/*
-	Sort copy stack and put the index of where a number needs to come
-	in the original stack a
-*/
-void	radix_sort(t_stack *a)
+void	simplify_stack(t_stack *a)
 {
 	t_stack	copy;
 	int		i;
@@ -84,7 +80,49 @@ void	radix_sort(t_stack *a)
 		}
 		i++;
 	}
+	free(copy.items);
 	print_array("a    ", a->items, a->max_size);
+}
+
+/*
+	Sort copy stack and put the index of where a number needs to come
+	in the original stack a
+*/
+void	radix_sort(t_stack *a, t_stack *b)
+{
+	simplify_stack(a);
+
+	int size = a->max_size;
+	int max_num = size - 1; // the biggest number in a is stack_size - 1
+	int max_bits = 0; // how many bits for max_num 
+	while ((max_num >> max_bits) != 0)
+	{
+			++max_bits;
+	}
+	printnum("max_bits", max_bits);
+
+	int i = 0;
+	while (i < max_bits)
+	{
+		int j = 0;
+		while (j < size)
+		{
+			int num = a->items[a->top - 1]; // top number of A
+			if (((num >> i) & 1) == 1)
+				rotate("ra", a); // if the (i + 1)-th bit is 1, leave in stack a
+			else
+				push("pb", b, a); // otherwise push to stack b
+			j++;
+		}
+		// put into boxes done
+		while (b->top > 0)
+		{
+			push("pa", a, b); // while stack b is not empty, do pa
+		}
+		i++;
+	
+		// connect numbers done
+	}
 
 }
 

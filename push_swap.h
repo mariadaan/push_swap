@@ -40,6 +40,7 @@ void	rev_rotate(char *name, t_stack *stack);
 // utils
 void	print_stack(char *name, t_stack stack);
 void	print_stacked(char *name, t_stack stack);
+void	print_stacked_binary(char *name, t_stack stack);
 void	print_array(char *name, int *numbers, int len);
 
 
@@ -49,7 +50,7 @@ void	sort_three(t_stack *a);
 void	sort_five(t_stack *a, t_stack *b);
 
 int	is_sorted(int *items, int size);
-void	radix_sort(t_stack *a);
+void	radix_sort(t_stack *a, t_stack *b);
 
 
 

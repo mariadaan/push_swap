@@ -10,6 +10,8 @@ int	main(int argc, char *argv[])
 	init_stack(&stack_a, argc - 1);
 	init_stack(&stack_b, argc - 1);
 	fill_stack(&stack_a, argv + 1);
+	// print_stacked_binary("a", stack_a);
+
 	if (has_duplicates(stack_a.items, stack_a.max_size))
 		return (error_msg("Error: duplicate numbers", 1));
 	if (argc == 4)
@@ -21,6 +23,8 @@ int	main(int argc, char *argv[])
 		// sort_stack(&stack_a, &stack_b);
 	// print_array("stack", stack_a.items, stack_a.top);
 	// print_stacked("a", stack_a);
+	// print_stacked("b", stack_b);
+
 	// print_stacked_binary("a", stack_a);
 	free(stack_a.items);
 	free(stack_b.items);

@@ -34,15 +34,65 @@ void	bubble_sort(t_stack *stack)
 		i = 0;
 		while (i < stack->max_size)
 		{
-			if (stack->items[i] < stack->items[i + 1])
+			if (stack->items[i] > stack->items[i + 1])
 				swap(stack, i, i + 1);
 			i++;
 		}
 	}
 }
 
+
+/*
+	checken of er nog een 0 op de place zit ONDER een 1
+
+	returns 1 als er nog een 0 onder zit
+	returns 0 als er geen 0 onder zit
+*/
+int		has_bit(t_stack *a, int place)
+{
+	int i;
+	int j;
+
+	i = a->top - 1;
+	while (i >= 0) // door getallen in stack lopen van boven naar beneden
+	{
+		if (((a->items[i] >> place) & 1) == 1) // als place een 1 is
+		{
+			j = i - 1;
+			// checken of er nog een 0 onder zit
+			while (j > 0)
+			{
+				if (((a->items[j] >> place) | 0) == 0)
+					return (1);
+				j--;
+			}
+		}
+		i--;
+	}
+	return (0);
+}
+
 /*
 	Radix sort!!
+
+	- max_bits kan maximaal 32 zijn want integer is max 32 bits
+	- niet onnodig vaak loopen door eerst te kijken hoeveel bits het grootste getal op de stack gebruikt
+		- bijvoorbeeld 28 is hoogste cijfer op de stack -> 11100 in binary -> 5 bits
+	
+	Example:
+	original stack:		[28, -16, 5, 1, -30, 70]
+	simplified stack:	[4, 1, 3, 2, 0, 5]
+	stack in binary:	[100, 1, 011, 010, 101]
+	max_bits = 3
+
+	- check most right bit. If it's 1, leave in stack a. If it's 0, push to stack b.
+	- push numbers back to a
+	- repeat for the bit next to most right bit, then the one next to that, etc.
+
+	plannetje:
+
+	als er tussen de bovenste cijfers geen 1 bit tussen zit, niet pushen naar b
+
 */
 void	radix_sort(t_stack *a, t_stack *b)
 {
@@ -60,12 +110,12 @@ void	radix_sort(t_stack *a, t_stack *b)
 	}
 	// printnum("max_bits", max_bits);
 	i = 0;
-	while (i < max_bits)
+	while (i < max_bits) // door alle bits heen loopen
 	{
 		j = 0;
-		while (j < a->max_size)
+		while (j < a->max_size) // door hele stack heen loopen
 		{
-			if (((a->items[a->top - 1] >> i) & 1) == 1)
+			if (((a->items[a->top - 1] >> i) & 1) == 1) // check the most right bit
 				rotate("ra", a); // if the (i + 1)-th bit is 1, leave in stack a
 			else
 				push("pb", b, a); // otherwise push to stack b

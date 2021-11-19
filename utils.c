@@ -7,7 +7,7 @@
 */
 int	is_sorted(int *items, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < size - 1)
@@ -22,7 +22,7 @@ int	is_sorted(int *items, int size)
 /*
 	Count how many numbers on the stack are higher than num
 */
-int		count_higher(int num, int *items, int len)
+int	count_higher(int num, int *items, int len)
 {
 	int	i;
 	int	count;
@@ -41,7 +41,7 @@ int		count_higher(int num, int *items, int len)
 /*
 	Counts the amount of bits an integer uses
 */
-int		count_bits(int num)
+int	count_bits(int num)
 {
 	int	max_bits;
 

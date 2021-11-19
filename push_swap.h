@@ -38,9 +38,9 @@ void	rotate(char *name, t_stack *stack);
 void	rev_rotate(char *name, t_stack *stack);
 
 // utils
-int		count_higher(int num, int *items, int len);
 int		is_sorted(int *items, int size);
 int		count_higher(int num, int *items, int len);
+int		count_bits(int num);
 void	copy_stack(t_stack *a, t_stack *copy);
 void	simplify_stack(t_stack *a);
 

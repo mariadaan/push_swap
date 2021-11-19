@@ -33,17 +33,17 @@ void	fill_stack(t_stack *stack, char **numbers)
 }
 
 /*
-	Checks whether string contains an integer value
+	Check whether string contains an integer value
 	Returns 1 if num is within integer value boundaries
 	else, returns 0
 */
-int		is_int(char *num_str)
+int	is_int(char *num_str)
 {
 	int		num_int;
 	char	*new_num_str;
 
 	if (!(num_str[0]))
-			return (1);
+		return (1);
 	num_int = ft_atoi(num_str);
 	new_num_str = ft_itoa(num_int);
 	if (ft_strcmp(num_str, new_num_str))
@@ -56,9 +56,9 @@ int		is_int(char *num_str)
 }
 
 /*
-	Checks whether int array contains duplicate numbers
+	Check whether int array contains duplicate numbers
 */
-int		has_duplicates(int *items, int size)
+int	has_duplicates(int *items, int size)
 {
 	int	i;
 	int	j;
@@ -83,7 +83,10 @@ int		has_duplicates(int *items, int size)
 	return (0);
 }
 
-int		check_input(int argc, char **input)
+/*
+	Check whether given arguments are an array of integers
+*/
+int	check_input(int argc, char **input)
 {
 	int		i;
 	char	*num;

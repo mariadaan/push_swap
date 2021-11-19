@@ -53,21 +53,17 @@ void	radix_sort(t_stack *a, t_stack *b)
 	while (bit_place < max_bits)
 	{
 		stack_place = 0;
-		while (stack_place < a->max_size) // door hele stack heen loopen voor 1 bit
+		while (stack_place < a->max_size)
 		{
-			if (((a->items[a->top - 1] >> bit_place) & 1) == 1) // check the most right bit
-				rotate("ra", a); // if the bit is 1, leave in stack a
-			else //if (has_bit(a, i, j))// ik wil alleen pb doen als er niks anders dan pa meer na gaat komen in deze ronde
-				push("pb", b, a); // otherwise push to stack b
+			if (((a->items[a->top - 1] >> bit_place) & 1) == 1)
+				rotate("ra", a);
+			else
+				push("pb", b, a);
 			stack_place++;
 		}
-		// put into boxes done
 		while (b->top > 0)
-		{
-			push("pa", a, b); // while stack b is not empty, do pa
-		}
+			push("pa", a, b);
 		bit_place++;
-		// connect numbers done
 	}
 }
 
@@ -80,13 +76,10 @@ void	radix_sort(t_stack *a, t_stack *b)
 */
 void	sort_three(t_stack *a)
 {
-	// als bovenste het grootste getal is rotaten
 	if (a->items[2] > a->items[1] && a->items[2] > a->items[0])
 		rotate("ra", a);
-	// als middelste het grootste getal is reverse rotaten
 	else if (a->items[1] > a->items[0] && a->items[1] > a->items[2])
 		rev_rotate("rra", a);
-	// bovenste getallen swappen als nodig
 	if (a->items[2] > a->items[1])
 		swap_top("sa", a);
 }
@@ -108,8 +101,7 @@ void	sort_five(t_stack *a, t_stack *b)
 	while (pushed < 2)
 	{
 		amount_higher = count_higher(a->items[a->top - 1], a->items, a->top);
-		// push lowest 2 numbers to stack b
-		if (amount_higher >= 3) // if 3 numbers or more are higher, push to b stack
+		if (amount_higher >= 3)
 		{
 			push("pb", b, a);
 			pushed++;

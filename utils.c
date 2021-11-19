@@ -38,6 +38,9 @@ int		count_higher(int num, int *items, int len)
 	return (count);
 }
 
+/*
+	Counts the amount of bits an integer uses
+*/
 int		count_bits(int num)
 {
 	int	max_bits;
@@ -47,6 +50,7 @@ int		count_bits(int num)
 		++max_bits;
 	return (max_bits);
 }
+
 /*
 	Copy stack a into copy stack
 */

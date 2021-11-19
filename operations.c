@@ -1,54 +1,13 @@
 #include "push_swap.h"
 
 /*
-	Removes a number from the top of the stack.
-	Return this number.
-*/
-int	pop_num(t_stack *stack)
-{
-	int	top_number;
-
-	top_number = stack->items[stack->top - 1];
-	stack->items[stack->top - 1] = 0;
-	stack->top--;
-	return (top_number);
-}
-
-/*
-	Adds a number at the top of a stack.
-	Only possible when there is room in the stack.
-*/
-void	add_num(t_stack *stack, int number)
-{
-	if (stack->top >= stack->max_size)
-		return;
-	stack->items[stack->top] = number;
-	stack->top++;
-}
-
-/*
-	Swap 2 elements in stack.
-	Do nothing if indexes of the elements are above top of stack.
-*/
-void	swap(t_stack *stack, int index_one, int index_two)
-{
-	int	temp;
-
-	if (index_one >= stack->top || index_two >= stack->top)
-		return;
-	temp = stack->items[index_one];
-	stack->items[index_one] = stack->items[index_two];
-	stack->items[index_two] = temp;
-}
-
-/*
 	Swap the first 2 elements at the top of stack.
 	Do nothing if there is only one or no elements.
 */
 void	swap_top(char *name, t_stack *stack)
 {
 	if (stack->top < 2)
-		return;
+		return ;
 	swap(stack, stack->top - 1, stack->top - 2);
 	ft_putendl_fd(name, 1);
 }
@@ -63,7 +22,7 @@ void	push(char *name, t_stack *one, t_stack *two)
 	int	number;
 
 	if (two->top == 0 || one->top >= one->max_size)
-		return;
+		return ;
 	number = pop_num(two);
 	add_num(one, number);
 	ft_putendl_fd(name, 1);

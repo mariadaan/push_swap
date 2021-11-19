@@ -1,9 +1,10 @@
 NAME		=	push_swap
 
-SRCS		=	main.c			\
-				operations.c	\
-				utils.c			\
-				algorithms.c	\
+SRCS		=	main.c				\
+				operations.c		\
+				operations_extra.c	\
+				utils.c				\
+				algorithms.c		\
 				init.c
 
 HEADER		=	push_swap.h

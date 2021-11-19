@@ -1,11 +1,11 @@
 NAME		=	push_swap
 
-SRCS		=	main.c				\
-				operations.c		\
-				operations_extra.c	\
-				utils.c				\
-				algorithms.c		\
-				init.c
+SRCS		=	src/main.c				\
+				src/operations.c		\
+				src/operations_extra.c	\
+				src/utils.c				\
+				src/algorithms.c		\
+				src/init.c
 
 HEADER		=	push_swap.h
 

@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 /*
-	Checks whether array is sorted in descending order
+	Checks whether array is sorted in ascending order
 	- returns 1 if sorted
 	- returns 0 if not sorted
 */
@@ -12,7 +12,7 @@ int	is_sorted(int *items, int size)
 	i = 0;
 	while (i < size - 1)
 	{
-		if (items[i] < items[i + 1])
+		if (items[i] > items[i + 1])
 			return (0);
 		i++;
 	}
@@ -37,6 +37,16 @@ int		count_higher(int num, int *items, int len)
 	}
 	return (count);
 }
+
+int		count_bits(int num)
+{
+	int	max_bits;
+
+	max_bits = 0;
+	while (((num - 1) >> max_bits) != 0)
+		++max_bits;
+	return (max_bits);
+}
 /*
 	Copy stack a into copy stack
 */
@@ -54,13 +64,12 @@ void	copy_stack(t_stack *a, t_stack *copy)
 }
 
 /*
-	Replace numbers in stack a with the index of where they
-	have to be at the end.
+	Replace numbers in stack a with simplified version of number
 	- Example:
 	before: [28, -16, 5, 1, -30, 70]
-	after:  [1, 4, 2, 3, 5, 0]
-	- Biggest number gets index 0, which is the bottom of the stack
-	- Lowest number gets index 5, which is the top number of the stack
+	after:  [4, 1, 3, 2, 0, 5]
+	- Highest number gets value 5
+	- Lowest number gets value 0
 */
 void	simplify_stack(t_stack *a)
 {
@@ -88,8 +97,6 @@ void	simplify_stack(t_stack *a)
 	}
 	free(copy.items);
 }
-
-
 
 /*
 	Print each number in stack.

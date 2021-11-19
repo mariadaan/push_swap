@@ -57,6 +57,7 @@ void	sort_five(t_stack *a, t_stack *b);
 void	radix_sort(t_stack *a, t_stack *b);
 
 void	sort_stack(t_stack *a, t_stack *b);
+int		has_bit(t_stack *a, int bit_place, int stack_place);
 
 
 #endif

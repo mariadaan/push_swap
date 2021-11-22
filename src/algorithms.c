@@ -11,7 +11,7 @@ void	bubble_sort(t_stack *stack)
 {
 	int	i;
 
-	while (!(is_sorted(stack->items, stack->max_size)))
+	while (!(is_sorted_ascending(stack->items, stack->max_size)))
 	{
 		i = 0;
 		while (i < stack->max_size)
@@ -24,8 +24,6 @@ void	bubble_sort(t_stack *stack)
 }
 
 /*
-	Radix sort!!
-
 	- simplify stack
 	Example:
 	original stack:		[28, -16, 5, 1, -30, 70]

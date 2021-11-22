@@ -6,7 +6,7 @@
 /*   By: mdaan <mdaan@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:01:35 by mdaan         #+#    #+#                 */
-/*   Updated: 2021/11/01 15:51:41 by mdaan         ########   odam.nl         */
+/*   Updated: 2021/11/22 16:39:02 by mdaan         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ int	ft_strcmp(const char *s1, const char *s2)
 		}
 		i++;
 	}
-	return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

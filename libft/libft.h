@@ -6,7 +6,7 @@
 /*   By: mdaan <mdaan@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:02:54 by mdaan         #+#    #+#                 */
-/*   Updated: 2021/11/03 19:23:54 by mdaan         ########   odam.nl         */
+/*   Updated: 2021/11/22 14:38:01 by mdaan         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ int				double_error_msg(char *msg, char *name, int error_code);
 char			*ft_move_ptr(const char *s, int c);
 int				ft_count_rows(char **array);
 int				get_str_index(char **array, char *str);
+int				ft_strin2darray(char **array, char *str);
 
 /*
 **	Bonus part: list functions
@@ -114,6 +115,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 /*
 **	Read functions
 */
+int				get_next_line(int fd, char **line);
 int				read_till_end(int fd, char **line);
 
 /*

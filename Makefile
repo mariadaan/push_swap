@@ -38,10 +38,10 @@ $(NAME): $(OBJS) $(HEADER)
 	$(CC) $(CFLAGS) $(LIBFTDIR)$(LIBFT) $(OBJS) -o $(NAME)
 
 %.o: %.c
-	$(CC) -g -c -I . $(CFLAGS) -c $< -o $@
+	$(CC) -c -I . $(CFLAGS) -c $< -o $@
 
 bonus:
-	make clean
+	rm -f $(SRCS_S:.c=.o)
 	$(MAKE) WITH_BONUS=1 all
 
 clean:

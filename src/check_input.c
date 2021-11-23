@@ -10,8 +10,8 @@ int	is_int(char *num_str)
 	int		num_int;
 	char	*new_num_str;
 
-	if (!(num_str[0]))
-		return (1);
+	if (!num_str)
+		return (0);
 	num_int = ft_atoi(num_str);
 	new_num_str = ft_itoa(num_int);
 	if (ft_strcmp(num_str, new_num_str))

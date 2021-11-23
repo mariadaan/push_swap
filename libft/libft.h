@@ -6,7 +6,7 @@
 /*   By: mdaan <mdaan@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:02:54 by mdaan         #+#    #+#                 */
-/*   Updated: 2021/11/22 14:38:01 by mdaan         ########   odam.nl         */
+/*   Updated: 2021/11/23 13:34:32 by mdaan         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,9 +125,14 @@ char			*ft_concat(char *str1, char *str2);
 char			*ft_concat_three(char *str1, char *str2, char *str3);
 
 /*
+**	Sort functions
+*/
+int				is_sorted_ascending(int *items, int size);
+int				is_sorted_descending(int *items, int size);
+
+/*
 **	Debug functions
 */
-
 int				printnum(char *name, int num);
 int				printfloat(char *name, float num);
 int				printstr(char *name, char *str);

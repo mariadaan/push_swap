@@ -35,8 +35,13 @@ void	fill_stack(t_stack *stack, char **numbers)
 int	check_fill_stacks(t_stack *a, t_stack *b, char *argv[], int argc)
 {
 	init_stack(a, argc - 1);
-	init_stack(b, argc - 1);
 	fill_stack(a, argv + 1);
+	if (is_sorted_descending(a->items, a->max_size))
+	{
+		free(a->items);
+		return (1);
+	}
+	init_stack(b, argc - 1);
 	if (has_duplicates(a->items, a->max_size))
 	{
 		free(a->items);

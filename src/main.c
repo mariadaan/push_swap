@@ -6,7 +6,7 @@ int	main(int argc, char *argv[])
 	t_stack	b;
 
 	if (check_input(argc, argv + 1))
-		return (error_msg("Error: non-int arguments", 1));
+		return (1);
 	if (check_fill_stacks(&a, &b, argv, argc))
 		return (1);
 	if (argc == 4)
@@ -17,4 +17,5 @@ int	main(int argc, char *argv[])
 		radix_sort(&a, &b);
 	free(a.items);
 	free(b.items);
+	return (0);
 }

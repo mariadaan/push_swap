@@ -63,7 +63,7 @@ int	check_input(int argc, char **input)
 	{
 		num = input[i];
 		if (!(is_int(num)))
-			return (1);
+			return (error_msg("Error: non-int arguments", 1));
 		i++;
 	}
 	return (0);

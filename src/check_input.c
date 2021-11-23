@@ -68,4 +68,3 @@ int	check_input(int argc, char **input)
 	}
 	return (0);
 }
-

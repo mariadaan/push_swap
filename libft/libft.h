@@ -6,7 +6,7 @@
 /*   By: mdaan <mdaan@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:02:54 by mdaan         #+#    #+#                 */
-/*   Updated: 2021/11/23 13:34:32 by mdaan         ########   odam.nl         */
+/*   Updated: 2021/11/23 14:03:14 by mdaan         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,5 @@ int				printfloat(char *name, float num);
 int				printstr(char *name, char *str);
 int				printchar(char *name, char c);
 int				printco(char *name, int x, int y);
-int				printflco(char *name, double x, double y);
 
 #endif

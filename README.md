@@ -1,10 +1,3 @@
-sorting algorithms
-
-					comparisons				array access
-Gnome sort:			8855					21960
-Selection:			7875					15526
-Insertion:			
-
 sa  : swap a - swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements).
 sb  : swap b - swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements).
 ss  : sa and sb at the same time.
@@ -16,8 +9,3 @@ rr  : ra and rb at the same time.
 rra : reverse rotate a- shift down all elements of stackaby 1. The last element becomes the first one.
 rrb : reverse rotate b- shift down all elements of stackbby 1. The last element becomes the first one.
 rrr : rra and rrb at the same time
-
-5500 voor 500
-700 voor 100
-12 voor 5
-2 voor 3

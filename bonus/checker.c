@@ -71,7 +71,7 @@ int	main(int argc, char *argv[])
 		else
 			return (error_msg("Error", 1));
 	}
-	if (is_sorted_descending(a.items, a.max_size - 1))
+	if (a.top == a.max_size && is_sorted_descending(a.items, a.max_size))
 		ft_putendl_fd("OK", 1);
 	else
 		ft_putendl_fd("KO", 1);

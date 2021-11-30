@@ -58,12 +58,9 @@ int	main(int argc, char *argv[])
 	t_stack	b;
 	char	*line;
 
-	if (argc == 1)
-		return (1);
-	if (check_input(argc, argv + 1))
-		return (error_msg("Error: non-int arguments", 1));
-	if (check_fill_stacks(&a, &b, argv, argc))
-		return (1);
+	if (check_input(&a, argc, argv))
+		return (error_msg("Error", 1));
+	init_stack(&b, argc - 1);
 	while (get_next_line(0, &line))
 	{
 		if (is_operation(line) != -1)

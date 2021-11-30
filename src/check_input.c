@@ -50,8 +50,11 @@ int	has_duplicates(int *items, int size)
 
 /*
 	Check whether given arguments are an array of integers
+	Returns
+	- 1 if all ints
+	- 0 if not all ints
 */
-int	check_input(int argc, char **input)
+int	is_all_ints(int argc, char **input)
 {
 	int		i;
 	char	*num;
@@ -63,8 +66,28 @@ int	check_input(int argc, char **input)
 	{
 		num = input[i];
 		if (!(is_int(num)))
-			return (error_msg("Error: non-int arguments", 1));
+			return (0);
 		i++;
+	}
+	return (1);
+}
+
+/*
+	Check whether input is integers only and whether it has duplicate numbers
+	Returns
+	- 1 if input is not valid
+	- 0 if input is valid
+*/
+int	check_input(t_stack *a, int argc, char **input)
+{
+	if (is_all_ints(argc, input + 1) == 0)
+		return (1);
+	init_stack(a, argc - 1);
+	fill_stack(a, input + 1);
+	if (has_duplicates(a->items, a->max_size))
+	{
+		free(a->items);
+		return (1);
 	}
 	return (0);
 }

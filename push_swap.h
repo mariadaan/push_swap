@@ -25,12 +25,12 @@ typedef struct s_stack
 // init
 void	init_stack(t_stack *stack, int size);
 void	fill_stack(t_stack *stack, char **numbers);
-int		check_fill_stacks(t_stack *a, t_stack *b, char *argv[], int argc);
 
 // check_input
 int		is_int(char *num_str);
 int		has_duplicates(int *items, int size);
-int		check_input(int argc, char **input);
+int		is_all_ints(int argc, char **input);
+int		check_input(t_stack *a, int argc, char **input);
 
 // operations
 void	swap_top(char *name, t_stack *stack);
